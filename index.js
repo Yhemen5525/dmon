@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const app = express();
-const port = 443;
 const storageFile = './messages.json';
 
 // Enable CORS
@@ -80,6 +79,6 @@ function generateId() {
 }
 
 // Start the server
-app.listen(port,"0.0.0.0", () => {
-  console.log(`Server listening at https://message-server.yhemen5525.repl.co`);
+const listener = app.listen(process.env.PORT, () => {
+  console.log(`Server listening on port ${listener.address().port}`);
 });
