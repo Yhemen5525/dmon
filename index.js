@@ -79,6 +79,6 @@ function generateId() {
 }
 
 // Start the server
-const listener = app.listen(process.env.PORT, () => {
+const listener = app.listen(process.env.PORT,'0.0.0.0', () => {
   console.log(`Server listening on port ${listener.address().port}`);
 });
